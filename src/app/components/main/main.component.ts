@@ -36,7 +36,7 @@ export class MainComponent implements OnInit {
               let pokemon: IPokemon = {
                 id: newData.id,
                 name: newData.name,
-                image: newData.sprites.back_default,
+                image: newData.sprites.front_default,
                 types: typesPokemon
               }
                 this.list.push(pokemon);
