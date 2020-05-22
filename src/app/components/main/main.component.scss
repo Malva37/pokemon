@@ -2,6 +2,7 @@
   width: 55%;
   padding: 1%;
   border: 1px solid #000;
+  flex-wrap: wrap;
 }
 
 .selectedPokemon {
@@ -12,6 +13,105 @@
 .moreDetails {
   display: none;
   border: 1px solid #000;
+}
+
+.onePokemon {
+  border: 1px solid #000;
+  padding: 1%;
+  margin: 1% auto;
+  width: 26%;
+  text-align: center;
+}
+
+.titlePokemon {
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: capitalize;
+
+}
+
+.imagePokemon {
+  border: 1px solid #000;
+  margin: 1% 1% 2%;
+  width: 90%;
+  
+}
+
+.typesPokemon {
+  flex-wrap: wrap;
+  margin: 5% 1%;
+
+}
+
+.typesPokemon button {
+  border-radius: 3px;
+  border: 1px solid;
+  padding: 1% 5%;
+  font-size: 15px;
 
 
+}
+.electric{
+  background-color:linear-gradient(to top, #f1da36, #fefcea);
+}
+.fire{
+  background:linear-gradient(to top, #da4f23, #e29d87);
+}
+.normal{
+  background:linear-gradient(to top, #da4f23, #e29d87);
+}
+.water{
+  background:linear-gradient(to top, #3e94d9, #f3fafa);
+}
+.grass{
+  background:linear-gradient(to top,#49b84d, #daebdb);
+}
+.flying{
+  background:linear-gradient(to top, #5bccff, #c7e8f8);
+}
+.fighting{
+  background:linear-gradient(to top, #da4f23, #e29d87);
+}
+.poison{
+  background:linear-gradient(to top, #8354d7, #ddd7e7);
+}
+.ground{
+  background:linear-gradient(to top, #da4f23, #e29d87);
+}
+.phychic{
+  background:linear-gradient(to top,#f1286c, #f3fafa);
+}
+.ice{
+  background:linear-gradient(to top,#08d3ed, #f7feff);
+}
+.bug{
+  background:linear-gradient(to top,#90ff0e, #a8aca2);
+}
+.ghost{
+  background:linear-gradient(to top, #da4f23, #e29d87);
+}
+.steel{
+  background:linear-gradient(to top, #da4f23, #e29d87);
+}
+.dragon{
+  background:linear-gradient(to top, #da4f23, #e29d87);
+}
+.dark{
+  background:linear-gradient(to top,#9d5b43, #fcf0ed);
+}
+.fairy{
+  background:linear-gradient(to top, #f38fb1, #f3fafa);
+}
+
+.loadMore {
+  width: 92%;
+  height: 40px;
+  margin: 5% auto;
+  background-color: blue;
+  border-radius: 5px;
+  border: 1px solid #316fa0;
+  color: white;
+  padding: 1% 20%;
+  font-size: 20px;
+  font-weight: 600;
 }
