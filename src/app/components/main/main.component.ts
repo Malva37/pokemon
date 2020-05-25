@@ -12,7 +12,8 @@ export class MainComponent implements OnInit {
 
   types: Array<string> = [];
   list: Array<IPokemon> = [];
-  typeValue:string;
+  offset: number = 0;
+  typeValue: string;
   ifUserCheckOne: boolean;
   imagePokemon: string;
   titlePokemon: string;
@@ -29,12 +30,12 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.getAll();
+    this.getAllTypes()
 
   }
 
-
   getAll() {
-    this.service.getPokemons().subscribe(
+    this.service.getPokemons(this.offset).subscribe(
       data => {
         let newData = JSON.stringify(data)
         let startList = JSON.parse(newData).results;
@@ -53,7 +54,6 @@ export class MainComponent implements OnInit {
               let newData = JSON.parse(JSON.stringify(data));
               newData.types.forEach(element => {
                 typesPokemon.push(element.type.name);
-                this.types.indexOf(element.type.name) === -1 ? this.types.push((element.type.name)) : console.log(' ');
               })
               newData.stats.forEach(element => {
                 switch (element.stat.name) {
@@ -95,11 +95,21 @@ export class MainComponent implements OnInit {
             })
         });
       })
+  }
+
+  getAllTypes() {
+    this.service.getTypes().subscribe(
+      data => {
+        let newData = JSON.parse(JSON.stringify(data)).results;
+        newData.forEach(element => {
+          this.types.push(element.name);
+        })
+      }
+    )
 
   }
 
   showOne(pokemon: IPokemon) {
-    console.log(pokemon);
     this.ifUserCheckOne = true;
     this.imagePokemon = pokemon.image;
     this.titlePokemon = pokemon.name;
@@ -111,11 +121,14 @@ export class MainComponent implements OnInit {
     this.spAttackPokemon = pokemon.spAttack;
     this.spDefensePokemon = pokemon.spDefense;
     this.speedPokemon = pokemon.speed;
+
   }
 
-  // loadMore(){
-  //   this.
-  // }
+  loadMore() {
+    this.offset += 12;
+    this.getAll();
+  }
+
 
 }
 
