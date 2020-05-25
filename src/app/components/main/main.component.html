@@ -1,18 +1,16 @@
 <div>
-  <!-- <select (change)="selectType($event)" class="custom-select"> -->
   <select [(ngModel)]="typeValue" name="typeValue" class="custom-select">
     <option selected [value]="-1">Choose type</option>
     <option *ngFor="let item of types">{{item}}</option>
   </select>
-
-  <div class="container d-flex">
+  <div class="d-flex">
     <div class="listPokemons d-flex">
 
       <figure class="onePokemon" (click)="showOne(pokemon)" *ngFor="let pokemon of list | typePokemon: typeValue">
         <img class="imageInList" [attr.src]="pokemon?.image" alt="">
         <p class="title">{{ pokemon.name }}</p>
         <div class="typesPokemon d-flex">
-          <div *ngFor="let type of pokemon.types">
+          <div class="typeButton" *ngFor="let type of pokemon.types">
             <button class="normal" *ngIf="type=='normal'">Normal</button>
             <button class="fire" *ngIf="type=='fire'">Fire</button>
             <button class="water" *ngIf="type=='water'">Water</button>
@@ -33,13 +31,12 @@
           </div>
         </div>
       </figure>
-
       <button class="loadMore" (click)="loadMore()">Load more</button>
     </div>
     <div class="selectedPokemon">
       <div class="moreDetails" *ngIf="ifUserCheckOne">
         <img [attr.src]="imagePokemon" alt="">
-        <p class="title">{{titlePokemon}} #{{idPokemon}}</p>
+        <p class="title">{{titlePokemon}} {{idPokemon | idPokemon}}</p>
         <table>
           <tbody>
             <tr>
@@ -74,7 +71,5 @@
         </table>
       </div>
     </div>
-
   </div>
-
 </div>

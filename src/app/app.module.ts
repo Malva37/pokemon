@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { TypePokemonPipe } from './shared/pipes/type-pokemon.pipe';
+import { IdPokemonPipe } from './shared/pipes/id-pokemon.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
-    TypePokemonPipe
+    TypePokemonPipe,
+    IdPokemonPipe
   ],
   imports: [
     BrowserModule,
